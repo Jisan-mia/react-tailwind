@@ -40,7 +40,7 @@ const CompanyCoursesToEnroll = ({
               <th scope="col" className="p-4">
 
               </th>
-              <th scope="col" className="py-3 px-6">
+              <th scope="col" className="py-3 px-6 hidden sm:block">
                   <span className="sr-only">Image</span>
               </th>
               <th scope="col" className="py-3 px-6">
@@ -76,7 +76,7 @@ const CompanyCoursesToEnroll = ({
                       <label for="checkbox-table-1" className="sr-only">checkbox</label>
                   </div>
               </td>
-              <td className="p-4 w-32">
+              <td className="p-4 w-32 hidden sm:block">
                   <img className='rounded' src="/images/course1.png" alt="Apple Watch" />
               </td>
               <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
