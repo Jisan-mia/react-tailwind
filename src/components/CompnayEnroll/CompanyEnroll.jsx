@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import InputComponent from '../InputComponent';
 import CompanyCoursesToEnroll from './CompanyCoursesToEnroll'
-import InputComponent from './InputComponent'
+
 
 const CompanyEnroll = () => {
   const [allAddedEmployeeEmail, setAllAddedEmployeeEmail] = useState([]);
