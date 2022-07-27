@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ImageInput from '../ImgInput';
 import InputComponent from '../InputComponent'
 
 const CompanyProfileAndEnrolledCourses = () => {
@@ -8,6 +9,7 @@ const CompanyProfileAndEnrolledCourses = () => {
 
   // editable info
   const [companyInfo, setCompanyInfo] = useState({
+    profileImg: '',
     company_name: 'My company Name',
     company_phone: '01656484845',
   })
@@ -27,11 +29,17 @@ const CompanyProfileAndEnrolledCourses = () => {
           <form onSubmit={handleSubmit}>
             <div className='grid gap-2'>
               <div className='flex items-center gap-4'>
-                <div className='w-[130px] h-[130px] bg-gray-400 rounded-full'>
-                  <img className='w-full rounded-full' src="/images/placeholderImg2.svg" alt="" />
+                <div className='w-[130px] h-[130px]  rounded-full'>
+                  <img className='w-full h-full object-cover rounded-full' src={`${companyInfo.profileImg || '/images/placeholderImg2.svg'}`} alt="" />
                 </div>
                 <button  className='text-sm max-w-max   h-8 rounded-full flex items-center justify-center gap-1 font-semibold w-full px-4 active:scale-[.98] transition border border-[#1F497B] text-[#1F497B]' type="submit">
                     Change Photo
+                    <ImageInput isNeedBase64 setImage={(img) => {
+                      setCompanyInfo({
+                        ...companyInfo,
+                        profileImg: img
+                      })
+                    }} />
                 </button>
               </div>
 
