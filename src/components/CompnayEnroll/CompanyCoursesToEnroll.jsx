@@ -89,7 +89,9 @@ const CompanyCoursesToEnroll = ({
               <td className="p-2">
                   <a onClick={() => {
                     // remove from cart
-                  }} className="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                    const updCart = cart.filter(i => i.id !== item.id)
+                    setCart(updCart)
+                  }} className="font-medium cursor-pointer text-red-600 dark:text-red-500 hover:underline">Remove</a>
               </td>
             </tr>
             ))}
