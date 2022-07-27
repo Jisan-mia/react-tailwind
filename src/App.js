@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import CompanyEnrolledCourses from './components/CompanyEnrolledCourses/CompanyEnrolledCourses';
 import CompanyLanding from './components/CompanyLanding/CompanyLanding';
+import CompanyProfileAndEnrolledCourses from './components/CompanyProfileAndEnrolledCourses/CompanyProfileAndEnrolledCourses';
 import CompanyEnroll from './components/CompnayEnroll/CompanyEnroll';
 
 
@@ -20,7 +20,11 @@ function App() {
    </header>
 
    {
-    currentPage === 1 ?  <CompanyEnroll /> : currentPage === 2 ? <CompanyEnrolledCourses /> : <CompanyLanding />
+    currentPage === 1 ? 
+      <CompanyEnroll /> 
+      : currentPage === 2 ? 
+      <CompanyProfileAndEnrolledCourses /> 
+      : <CompanyLanding />
    }
   
    </>
