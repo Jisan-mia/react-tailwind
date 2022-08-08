@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Certificate from './components/Certificate/Certificate';
 import CompanyLanding from './components/CompanyLanding/CompanyLanding';
 import CompanyProfileAndEnrolledCourses from './components/CompanyProfileAndEnrolledCourses/CompanyProfileAndEnrolledCourses';
 import CompanyEnroll from './components/CompnayEnroll/CompanyEnroll';
@@ -16,6 +17,8 @@ function App() {
         <h2 onClick={() => setCurrentPage(1)} className='underline cursor-pointer'>1st page</h2>
         <h2 onClick={() => setCurrentPage(2)} className='underline cursor-pointer'>2nd page</h2>
         <h2 onClick={() => setCurrentPage(3)} className='underline cursor-pointer'>3rd page</h2>
+        <h2 onClick={() => setCurrentPage(4)} className='underline cursor-pointer'>Certificate page</h2>
+        
       </div>
    </header>
 
@@ -24,7 +27,8 @@ function App() {
       <CompanyEnroll /> 
       : currentPage === 2 ? 
       <CompanyProfileAndEnrolledCourses /> 
-      : <CompanyLanding />
+      : currentPage === 3 ? <CompanyLanding /> : 
+      <Certificate />
    }
   
    </>
