@@ -4,6 +4,7 @@ import Certificate from './components/Certificate/Certificate';
 import CompanyLanding from './components/CompanyLanding/CompanyLanding';
 import CompanyProfileAndEnrolledCourses from './components/CompanyProfileAndEnrolledCourses/CompanyProfileAndEnrolledCourses';
 import CompanyEnroll from './components/CompnayEnroll/CompanyEnroll';
+import { PDFViewer } from '@react-pdf/renderer';
 
 
 function App() {
@@ -28,7 +29,11 @@ function App() {
       : currentPage === 2 ? 
       <CompanyProfileAndEnrolledCourses /> 
       : currentPage === 3 ? <CompanyLanding /> : 
-      <Certificate />
+      (
+        <PDFViewer>
+          <Certificate />
+        </PDFViewer>
+      )
    }
   
    </>
